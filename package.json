@@ -1,0 +1,46 @@
+{
+  "name": "shpacemail",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "googleapis": "^39.2.0",
+    "grommet": "2.7.11",
+    "grommet-icons": "^4.2.0",
+    "js-base64": "^2.5.1",
+    "node-html-parser": "^1.2.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-pose": "^4.0.8",
+    "react-scripts": "3.0.0",
+    "styled-components": "^4.2.0"
+  },
+  "scripts": {
+    "start": "set PORT=8000 && react-scripts start ",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "guppy": {
+    "id": "dcf836f0-00d5-11ea-8f25-4f840b8f2614",
+    "name": "shpacemail",
+    "type": "create-react-app",
+    "color": "#00bfb5",
+    "icon": null,
+    "createdAt": 1573072912356
+  }
+}
