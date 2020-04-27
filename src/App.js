@@ -131,7 +131,7 @@ class App extends React.Component {
       console.log("Getting All Emails...")
       window.gapi.client.gmail.users.threads.list({
         'userId': 'me',
-        'labelIds' : ['INBOX']
+        // 'labelIds' : ['INBOX']
       }).then( (response) => {
         var threads = response.result.threads;
           let allEmails = []
@@ -181,7 +181,7 @@ class App extends React.Component {
       <Grommet theme={theme} >
        <Box direction='row' flex >
     
-          <Sidebar profile={this.props.profile} />
+          <Sidebar profile={this.props.profile} signIn={this.props.signIn}/>
           {/* 
           <RowView 
             emails={this.state.emails} 

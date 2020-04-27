@@ -42,9 +42,9 @@ function Sidebar (props) {
         <Text size='small' margin='none' color="dark-5"
         >{props.profile.email}</Text>
 
-        {/* <Button
-          onClick={this.props.signIn}
-        > Sign In</Button> */}
+        <Button
+          onClick={props.signIn}
+        > New </Button>
       </Box>
 
 

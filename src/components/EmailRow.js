@@ -41,7 +41,8 @@ const HoverBox = posed.div({
   normal: { 
     // height: '80px'
     padding: 0,
-    margin: 5
+    margin: 5, 
+    width: '100%'
   }
 });
 
@@ -149,7 +150,6 @@ class EmailRow extends React.Component {
     let pose = 'normal'
   
   return (
-    <React.Fragment>
        <HoverBox pose={pose} >
         {/* <Box
           justify='start'
@@ -200,7 +200,6 @@ class EmailRow extends React.Component {
 
         </HoverBox>
 
-    </React.Fragment>
 
   )}
 }

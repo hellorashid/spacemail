@@ -31,3 +31,21 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(165, 165, 165) rgb(242, 242, 242);
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: rgb(242, 242, 242);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(165, 165, 165);
+  border-radius: 20px;
+  /* border: 3px solid orange; */
+}

@@ -15,10 +15,9 @@ function SplitView (props) {
             background='light-2'
             align='center'
             justify='between'
-            style={{ overflowX: 'hidden', maxWidth: 350, overflowY: 'scroll'}}
+            style={{ overflowX: 'hidden', maxWidth: 350, overflowY: 'auto'}}
             pad="small"
         >   
-        <Box>
             {
             props.emails.map( (email) => { 
                 return (
@@ -32,7 +31,6 @@ function SplitView (props) {
                     />
                 )})
             }
-        </Box>
         </Box>
 
         <Box flex background="light-1" fill>
