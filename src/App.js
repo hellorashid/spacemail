@@ -12,6 +12,7 @@ import {
   Layer 
 } from 'grommet';
 
+import SignIn from './containers/SignIn.js'
 import Sidebar from './components/Sidebar.js'
 import RowView from './components/RowView.js'
 import SplitView from './components/SplitView';
@@ -36,6 +37,7 @@ class MainApp extends React.Component {
     window.gapi.load('client:auth2', this.initClient);
 
     this.state = { 
+      loading: true,
       isSignedIn: false, 
       profile: {}
     }
@@ -56,20 +58,23 @@ class MainApp extends React.Component {
       // updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
       const isSignedIn = window.gapi.auth2.getAuthInstance().isSignedIn.get()  
       const profile = window.gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile()
-      
-      const fullProfile = { 
-        id: profile.getId(),
-        fullName: profile.getName(), 
-        givenName: profile.getGivenName(),
-        familyName:  profile.getFamilyName(), 
-        imageUrl:  profile.getImageUrl(),
-        email: profile.getEmail()
+      let fullProfile = {}
+      if (profile) { 
+        fullProfile = { 
+          id: profile.getId(),
+          fullName: profile.getName(), 
+          givenName: profile.getGivenName(),
+          familyName:  profile.getFamilyName(), 
+          imageUrl:  profile.getImageUrl(),
+          email: profile.getEmail()
+        }
       }
 
-      this.setState({isSignedIn: isSignedIn, profile: fullProfile})
+      this.setState({isSignedIn: isSignedIn, profile: fullProfile, loading: false})
     }, function(error) {
       console.log("Ohhh snap! :( ")
     });
+
   }
 
   signIn = () => { 
@@ -85,9 +90,7 @@ class MainApp extends React.Component {
         this.state.isSignedIn ?
         <App signIn={this.signIn} profile={this.state.profile}  />
         : 
-        <div><h1 style={{position: 'absolute', left: '50vw'}}> Loading...</h1>
-          <button onClick={this.signIn}> Sign In </button>
-        </div>
+        <SignIn signIn={this.signIn} loading={this.state.loading}/>
       }
     </div>
   )}
@@ -179,7 +182,7 @@ class App extends React.Component {
   render() { 
   return (
       <Grommet theme={theme} >
-       <Box direction='row' flex >
+       <Box direction='row' flex animation="fadeIn">
     
           <Sidebar profile={this.props.profile} signIn={this.props.signIn}/>
           {/* 
