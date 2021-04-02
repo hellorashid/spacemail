@@ -47,8 +47,4 @@ function SplitView (props) {
     )
 }
 
-const SingleRow = (props) => { 
-    
-}
-
 export default SplitView;

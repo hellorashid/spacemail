@@ -53,7 +53,7 @@ class MainApp extends React.Component {
       console.log("Gmail Lib Loaded")
       // Listen for sign-in state changes.
       // window.gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-  
+      console.log(window.gapi.auth2.getAuthInstance())
       // // Handle the initial sign-in state.
       // updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
       const isSignedIn = window.gapi.auth2.getAuthInstance().isSignedIn.get()  
@@ -140,7 +140,7 @@ class App extends React.Component {
           let allEmails = []
 
           for ( let i in threads) { 
-              console.log('😀',threads[i])
+              // console.log('😀',threads[i])
 
               // let fullEmail = window.gapi.client.gmail.users.threads.get({
               //   'userId': 'me',
@@ -182,7 +182,7 @@ class App extends React.Component {
   render() { 
   return (
       <Grommet theme={theme} >
-       <Box direction='row' flex animation="fadeIn">
+       <Box direction='row' flex >
     
           <Sidebar profile={this.props.profile} signIn={this.props.signIn}/>
           {/* 

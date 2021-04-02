@@ -127,7 +127,7 @@ class EmailRow extends React.Component {
             // }
         }
 
-        // console.log(labels)
+        console.log(labels)
 
         let headers = response.result.messages[0].payload.headers
 

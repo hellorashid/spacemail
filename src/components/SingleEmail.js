@@ -13,6 +13,7 @@ import { Notification, SettingsOption, Close } from 'grommet-icons';
 import { parse } from 'node-html-parser';
 
 const batman = 'https://images-na.ssl-images-amazon.com/images/I/31x%2Bq3aNVKL._AC_SX425_.jpg'
+
 const SingleEmail = (props) => { 
   const [html, setHtml] = React.useState(props.singleEmail.html)
   const test = () => { 
@@ -60,8 +61,8 @@ const SingleEmail = (props) => {
     // > 
     <Box
       // style={{filter: 'invert(100%) hue-rotate(180deg)', }}
-      animation="fade"
-      // key={props.singleEmail.subject}
+      animation="fadeIn"
+      key={props.singleEmail.subject}
     >
         {/* {tracker && <p>Possible tracker detected - took care of it, don't worry ✌</p>} */}
 
@@ -78,16 +79,21 @@ const SingleEmail = (props) => {
           width="xlarge"
           pad="medium"
         >
-          <Box flex="grow" overflow="auto" pad={{ vertical: "medium" }} >
+      
+          <Box flex="grow" overflow="auto" pad={{ vertical: "small" }}  style={{backgroundColor: '#efefef', borderRadius: 20}}>
             <div dangerouslySetInnerHTML={{ __html: root }} />
           </Box>
 
-          <Box flex={false} as="footer" align="start"
-            onClick={() => console.log(props.singleEmail.body)}
+          <Box flex={true} as="footer" align="start"
           >
             <Button
+              onClick={() => console.log(props.singleEmail.body)}
               type="submit"
               label="Submit"
+              primary
+            />
+            <Button
+              label="Archive"
               primary
             />
           </Box>
