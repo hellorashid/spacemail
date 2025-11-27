@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "googleapis": "^39.2.0",
+    "googleapis": "^166.0.0",
     "grommet": "2.7.11",
     "grommet-icons": "^4.2.0",
     "js-base64": "^2.5.1",
@@ -11,7 +11,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-pose": "^4.0.8",
-    "react-scripts": "3.0.0",
+    "react-scripts": "5.0.1",
     "styled-components": "^4.2.0"
   },
   "scripts": {
